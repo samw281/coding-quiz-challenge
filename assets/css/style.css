@@ -1,0 +1,43 @@
+header {
+    margin: 50px;
+    display: inline;
+}
+
+header .high-score {
+    display: inline-block;
+    margin-top: 50px;
+    color: #b567e5;
+    text-decoration: none;
+}
+
+header p {
+   float: right;
+   margin-top: 50px;
+   margin-right: 50px;
+}
+
+.question-section {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: 5% 25%;
+}
+.answer-buttons {
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.answer-btn {
+    flex: 0 0 45px;
+    border-radius: 15px;
+    flex-direction: column;
+    background-color: #352174;
+    margin: 2px;
+}
+
+.answer-btn:hover {
+    background-color: #b567e5;
+}
