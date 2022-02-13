@@ -15,12 +15,45 @@ header p {
    margin-top: 50px;
    margin-right: 50px;
 }
+.start-section {
+     display: flex;
+    height: 200px;
+    width: 400px;
+    margin: 0 25% 0 25%;
+    flex-direction: column;
+}
+.start-section h1, .start-section p {
+    text-align: center;
+}
+
+.start-button {
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    margin: 0 20%;
+}
+ 
+.start-btn {
+    flex: 0 0 45px;
+    border-radius: 15px;
+    flex-direction: column;
+    background-color: #352174;
+    margin: 2px;
+    color: white;
+    font-size: 30px;
+    padding-left: 49px;
+}
+
+.start-btn:hover {
+    background-color: #b567e5;
+}
 
 .question-section {
     display: flex;
     height: 400px;
     width: 400px;
-    margin: 5% 25%;
+    margin: 0 25% 0 25%;
+    flex-direction: column;
 }
 .answer-buttons {
     display: flex;
@@ -36,6 +69,7 @@ header p {
     flex-direction: column;
     background-color: #352174;
     margin: 2px;
+    
 }
 
 .answer-btn:hover {

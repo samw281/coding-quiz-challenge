@@ -9,18 +9,32 @@
 </head>
 <body>
     <header>
-        <a class="high-score" href="./highscore.html" target="_blank">View High Scores</a>
+        <a class="high-score" href="./highscore.html">View High Scores</a>
         <p id="counter"></p>
     </header>
 
+    <section class="start-section">
+        <h1 id="start-title"></h1>
+        <p id="start-text"></p>
+        <div class="start-button">
+            <button id="start-button" class="start-btn">Start Quiz</button> 
+        </div>
+       
+    </section>
+
 <section class="question-section">
-    <h2 class="question-text"></h2>
+    <h2 id="question-text" class="question-text"></h2>
      <div id="answer-buttons" class="answer-buttons">
         <button id="answer1" class="answer-btn"></button>
         <button id="answer2" class="answer-btn"></button>
         <button id="answer3" class="answer-btn"></button>
         <button id="answer4" class="answer-btn"></button>
     </div>
+</section>
+
+<section class="done-section">
+    <h2 id="done"></h2>
+    <p id="final-score"></p>
 </section>
    
     <script src="./assets/js/script.js"></script>
