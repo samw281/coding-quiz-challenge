@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <header>
-        <a class="high-score" href="./highscore.html">View High Scores</a>
-        <p id="counter"></p>
+      <a class="high-score" href="./highscore.html">View High Scores</a>
+      <p id="counter"></p>
     </header>
 
-    <section class="start-section">
-        <h1 id="start-title"></h1>
-        <p id="start-text"></p>
-        <div class="start-button">
-            <button id="start-button" class="start-btn">Start Quiz</button> 
-        </div>
-       
+    <section class="done-section">
+      <h2 id="done"></h2>
+      <p id="final-score"></p>
     </section>
 
-<section class="question-section">
-    <h2 id="question-text" class="question-text"></h2>
-     <div id="answer-buttons" class="answer-buttons">
+    <section class="start-section">
+      <h1 id="start-title"></h1>
+      <p id="start-text"></p>
+      <div class="start-button">
+        <button id="start-button" class="start-btn"></button>
+      </div>
+    </section>
+
+    <section class="question-section">
+      <h2 id="question-text" class="question-text"></h2>
+      <div id="answer-buttons" class="answer-buttons">
         <button id="answer1" class="answer-btn"></button>
         <button id="answer2" class="answer-btn"></button>
         <button id="answer3" class="answer-btn"></button>
         <button id="answer4" class="answer-btn"></button>
-    </div>
-</section>
+      </div>
+      <p id="correct-wrong" class="correct-wrong"></p>
+    </section>
 
-<section class="done-section">
-    <h2 id="done"></h2>
-    <p id="final-score"></p>
-</section>
-   
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
