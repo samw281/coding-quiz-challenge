@@ -10,6 +10,7 @@ var startButtonEl = document.getElementById("start-button");
 var doneH2El = document.getElementById("done");
 var finalScore = document.getElementById("final-score");
 var correctWrong = document.getElementById("correct-wrong");
+var enterInitials = document.getElementById("enter-initials")
 
 var timerEl = document.getElementById("counter");
 
@@ -27,6 +28,7 @@ function counter() {
     } else {
       timerEl.textContent = "";
       clearInterval(timeInterval);
+      allDone();
     }
   }, 1000);
 }
@@ -41,6 +43,7 @@ var startQuiz = function () {
   button2El.setAttribute("style", "display: none;");
   button3El.setAttribute("style", "display: none;");
   button4El.setAttribute("style", "display: none;");
+  enterInitials.setAttribute("style", "display: none;");
 };
 
 startButtonEl.addEventListener("click", function () {
@@ -99,24 +102,24 @@ var question_2 = function () {
   button4El.setAttribute("style", "color: white; padding: 10px 35px;");
 
   button1El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_3();
+    correctWrong.textContent = "Wrong!";
   });
 
   button2El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_3();
+    correctWrong.textContent = "Wrong!";
   });
 
   button3El.addEventListener("click", function () {
     question_3();
+    correctWrong.textContent = "Correct!";
   });
 
   button4El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_3();
+    correctWrong.textContent = "Wrong!";
   });
-  button3El.removeEventListener("click", question_2, false);
 };
 
 var question_3 = function () {
@@ -131,19 +134,22 @@ var question_3 = function () {
   button4El.setAttribute("style", "color: white; padding: 10px 40px;");
 
   button1El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_4();
+    correctWrong.textContent = "Wrong!";
   });
   button2El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_4();
+    correctWrong.textContent = "Wrong!";
   });
   button3El.addEventListener("click", function () {
     timeLeft = timeLeft - 10;
+    correctWrong.textContent = "Wrong!";
     question_4();
   });
   button4El.addEventListener("click", function () {
+    timeLeft = timeLeft + 10;
     question_4();
+    correctWrong.textContent = "Correct!";
   });
  
 };
@@ -161,19 +167,22 @@ var question_4 = function () {
   button4El.setAttribute("style", "color: white; padding: 10px 50px;");
 
   button1El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_5();
+    correctWrong.textContent = "Wrong!";
   });
   button2El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
     question_5();
+    correctWrong.textContent = "Wrong!";
   });
   button3El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
+    timeLeft = timeLeft + 30;
     question_5();
+    correctWrong.textContent = "Correct!";
   });
   button4El.addEventListener("click", function () {
+    timeLeft = timeLeft - 30;
     question_5();
+    correctWrong.textContent = "Wrong!";
   });
 };
 
@@ -190,20 +199,25 @@ var question_5 = function () {
   button4El.setAttribute("style", "color: white; padding: 10px 35px;");
 
   button1El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
+    timeLeft = timeLeft;
     allDone();
+    correctWrong.textContent = "Wrong!";
   });
   button2El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
+    timeLeft = timeLeft ;
     allDone();
+    correctWrong.textContent = "Wrong!";
   });
   button3El.addEventListener("click", function () {
-    timeLeft = timeLeft - 10;
+    timeLeft = timeLeft - 70;
     allDone();
+    correctWrong.textContent = "Wrong!";
   });
   button4El.addEventListener("click", function () {
+    timeLeft = timeLeft + 70;
     allDone();
-  });
+    correctWrong.textContent = "Correct!";
+  })
 };
 
 var allDone = function () {
@@ -212,9 +226,10 @@ var allDone = function () {
   button2El.setAttribute("style", "display: none;");
   button3El.setAttribute("style", "display: none;");
   button4El.setAttribute("style", "display: none;");
+  enterInitials.setAttribute("style", "display: inline;");
   doneH2El.textContent = "All Done";
   if (timeLeft > 0) {
-    finalScore.textContent = "Your final score is " + timeLeft;
+    finalScore.textContent = "Your final score is " + JSON.stringify(timeLeft);
   } else {
     finalScore.textContent = "Your final score is 0";
   }
