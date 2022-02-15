@@ -248,7 +248,7 @@ saveBtn.addEventListener("click", function(event){
   score.push(timeLeft, enterInitials.value);
   console.log(score)
  localStorage.setItem("score", score)
-//  location.href = "highscore.html"
+ location.href = "https://samw281.github.io/coding-quiz-challenge/highscore.html"
 });
 
 startQuiz();
