@@ -10,7 +10,8 @@ var startButtonEl = document.getElementById("start-button");
 var doneH2El = document.getElementById("done");
 var finalScore = document.getElementById("final-score");
 var correctWrong = document.getElementById("correct-wrong");
-var enterInitials = document.getElementById("enter-initials")
+var enterInitials = document.getElementById("enter-initials");
+var saveBtn = document.getElementById("save-btn");
 
 var timerEl = document.getElementById("counter");
 
@@ -44,6 +45,7 @@ var startQuiz = function () {
   button3El.setAttribute("style", "display: none;");
   button4El.setAttribute("style", "display: none;");
   enterInitials.setAttribute("style", "display: none;");
+  saveBtn.setAttribute("style", "display: none;")
 };
 
 startButtonEl.addEventListener("click", function () {
@@ -228,13 +230,25 @@ var allDone = function () {
   button4El.setAttribute("style", "display: none;");
   enterInitials.setAttribute("style", "display: inline;");
   doneH2El.textContent = "All Done";
+  saveBtn.textContent = "save";
+  saveBtn.setAttribute("style", "height: 25px; width: 50px; border-radius: 10px; background-color: #b567e5;")
   if (timeLeft > 0) {
-    finalScore.textContent = "Your final score is " + JSON.stringify(timeLeft);
+    finalScore.textContent = "Your final score is " + timeLeft;
   } else {
     finalScore.textContent = "Your final score is 0";
   }
   clearInterval(timeInterval);
   timerEl.textContent = "";
+
 };
+
+saveBtn.addEventListener("click", function(event){
+  event.preventDefault();  
+  var score = [];
+  score.push(timeLeft, enterInitials.value);
+  console.log(score)
+ localStorage.setItem("score", score)
+//  location.href = "highscore.html"
+});
 
 startQuiz();
