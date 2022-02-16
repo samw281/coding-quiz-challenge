@@ -245,10 +245,11 @@ var allDone = function () {
 saveBtn.addEventListener("click", function(event){
   event.preventDefault();  
   var score = [];
-  score.push(timeLeft, enterInitials.value);
+  score.push(enterInitials.value + ' ' + timeLeft);
+  JSON.stringify(score)
   console.log(score)
  localStorage.setItem("score", score)
- location.href = "https://samw281.github.io/coding-quiz-challenge/highscore.html"
+ location.href = "./highscore.html";
 });
 
 startQuiz();
