@@ -17,3 +17,6 @@ https://samw281.github.io/coding-quiz-challenge/
 ## Contributions
 
 Sam Williams (https://github.com/samw281)
+
+
+![Quiz Screenshot](/assets/images/code-quiz-screenshot.png)

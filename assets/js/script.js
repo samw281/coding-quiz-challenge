@@ -1,3 +1,4 @@
+// set variables for html elements
 var button1El = document.getElementById("answer1");
 var button2El = document.getElementById("answer2");
 var button3El = document.getElementById("answer3");
@@ -12,9 +13,9 @@ var finalScore = document.getElementById("final-score");
 var correctWrong = document.getElementById("correct-wrong");
 var enterInitials = document.getElementById("enter-initials");
 var saveBtn = document.getElementById("save-btn");
-
 var timerEl = document.getElementById("counter");
 
+// funtion for timer
 function counter() {
   timeLeft = 75;
 
@@ -34,6 +35,7 @@ function counter() {
   }, 1000);
 }
 
+// function to display start page and hide question content
 var startQuiz = function () {
   startTitleEl.textContent = "Coding Quiz Challenge";
   startTextEl.textContent =
@@ -48,6 +50,7 @@ var startQuiz = function () {
   saveBtn.setAttribute("style", "display: none;")
 };
 
+// event listener to load question 1 and hide start page content when start button is clicked 
 startButtonEl.addEventListener("click", function () {
   question_1();
   startTitleEl.setAttribute("style", "display: none");
@@ -55,6 +58,7 @@ startButtonEl.addEventListener("click", function () {
   startButtonEl.setAttribute("style", "display: none;");
 });
 
+// set question 1 content, event listener to load question 2 when any answer button is clicked and, subtract time if wrong answer button is clicked 
 var question_1 = function () {
   counter();
   button1El.textContent = "1. Strings";
@@ -91,6 +95,7 @@ var question_1 = function () {
   });
 };
 
+// set question 2 content, event listener to load question 3 when any answer button is clicked and, subtract time if wrong answer button is clicked 
 var question_2 = function () {
   button1El.textContent = "1. Quotes";
   button2El.textContent = "2. Curly Brackets";
@@ -124,6 +129,7 @@ var question_2 = function () {
   });
 };
 
+// set question 3 content, event listener to load question 4 when any answer button is clicked and, subtract time if wrong answer button is clicked 
 var question_3 = function () {
   button1El.textContent = "1. Numbers and Strings";
   button2El.textContent = "2. Other Arrays";
@@ -156,6 +162,7 @@ var question_3 = function () {
  
 };
 
+// set question 4 conent, event listener to load question 5 when any answer button is clicked and, subtract time if wrong answer button is clicked 
 var question_4 = function () {
   button1El.textContent = "1. Commas";
   button2El.textContent = "2. Curly Brackets";
@@ -188,6 +195,7 @@ var question_4 = function () {
   });
 };
 
+// set question 4 conent, event listener to load "all done" function when any answer button is clicked and, subtract time if wrong answer button is clicked 
 var question_5 = function () {
   button1El.textContent = "1. JavaScript";
   button2El.textContent = "2. Terminal/Bash";
@@ -222,6 +230,7 @@ var question_5 = function () {
   })
 };
 
+// funtion to set all done page content and hide question content
 var allDone = function () {
   questionEl.setAttribute("style", "display: none;");
   button1El.setAttribute("style", "display: none;");
@@ -239,17 +248,23 @@ var allDone = function () {
   }
   clearInterval(timeInterval);
   timerEl.textContent = "";
-
 };
-
+//  event listener on save button to save initials and score to local storage and navigate to highscore page
 saveBtn.addEventListener("click", function(event){
-  event.preventDefault();  
-  var score = [];
-  score.push(enterInitials.value + ' ' + timeLeft);
-  JSON.stringify(score)
-  console.log(score)
- localStorage.setItem("score", score)
- location.href = "./highscore.html";
+  event.preventDefault(); 
+  if(JSON.parse(window.localStorage.getItem("highScore"))) {
+    var highScore = JSON.parse(window.localStorage.getItem("highScore"))
+    highScore.push(enterInitials.value + " " + timeLeft);
+    localStorage.setItem("highScore", JSON.stringify(highScore))
+    location.href = "./highscore.html";
+  } else {
+    var highScore = []
+    highScore.push(enterInitials.value + " " + timeLeft);
+    localStorage.setItem("highScore", JSON.stringify(highScore))
+    location.href = "./highscore.html";
+  }
 });
+
+
 
 startQuiz();

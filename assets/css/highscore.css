@@ -1,3 +1,4 @@
+/* style to get rid of dots in unordered list */
 #score-list {
     list-style-type: none;
 };

@@ -1,8 +1,10 @@
+/* styles for the header */
 header {
   margin: 50px;
   display: inline;
 }
 
+/* styles for link to highscore page */
 header .high-score {
   display: inline-block;
   margin-top: 50px;
@@ -10,11 +12,14 @@ header .high-score {
   text-decoration: none;
 }
 
+/* styles for the header p */
 header p {
   float: right;
   margin-top: 50px;
   margin-right: 50px;
 }
+
+/* styles for the start page container */
 .start-section {
   display: flex;
   height: 200px;
@@ -22,11 +27,14 @@ header p {
   margin: 0 25% 0 25%;
   flex-direction: column;
 }
+
+/* styles for the start page h1 and p */
 .start-section h1,
 .start-section p {
   text-align: center;
 }
 
+/* styles for the start button container*/
 .start-button {
   display: flex;
   height: 200px;
@@ -34,6 +42,7 @@ header p {
   margin: 0 20%;
 }
 
+/* styles for the start button */
 .start-btn {
   flex: 0 0 45px;
   border-radius: 15px;
@@ -45,10 +54,12 @@ header p {
   padding-left: 49px;
 }
 
+/* style for start button on hover */
 .start-btn:hover {
   background-color: #b567e5;
 }
 
+/* styles for question container */
 .question-section {
   display: flex;
   height: 400px;
@@ -56,6 +67,8 @@ header p {
   margin: 0 25% 0 25%;
   flex-direction: column;
 }
+
+/* styles for container holding buttons */
 .answer-buttons {
   display: flex;
   height: 200px;
@@ -63,7 +76,7 @@ header p {
   width: 50%;
   justify-content: space-between;
 }
-
+/*  styles for answer buttons */
 .answer-btn {
   flex: 0 0 45px;
   border-radius: 15px;
@@ -71,16 +84,19 @@ header p {
   background-color: #352174;
   margin: 2px;
 }
-
+/* styles for answer buttons on hover */
 .answer-btn:hover {
   background-color: #b567e5;
 }
 
-.done-section {
-  padding-left: 40%;
-}
-
+/* styles for correct/wrong text displayed below questions */
 .correct-wrong {
     font-size: 40px;
     color: grey;
 }
+
+/* styles for container holding done section */
+.done-section {
+  padding-left: 40%;
+}
+
